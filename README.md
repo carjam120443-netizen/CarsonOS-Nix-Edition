@@ -21,6 +21,7 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Package management:** Lix (Nix-compatible implementation)
 - **Text editor:** Textadept
 - **GNU utilities:** GNU grep
+- **Shell tools:** Zsh with Deer file navigation, plus CMatrix terminal animation
 - **Build definition:** Nix flake
 - **CI:** GitHub Actions ISO build
 
