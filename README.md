@@ -11,12 +11,14 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Base:** NixOS (nixpkgs unstable)
 - **Architecture:** x86_64
 - **Desktop:** KDE Plasma 6
+- **Optional window manager:** i3 (selectable from the SDDM login screen)
 - **Installer:** Calamares graphical installer (NixOS installer integration)
 - **Display manager:** SDDM
 - **Init/system manager:** systemd (NixOS default)
 - **Networking:** NetworkManager
 - **Audio:** PipeWire
 - **Package management:** Lix (Nix-compatible implementation)
+- **Text editor:** Textadept
 - **Build definition:** Nix flake
 - **CI:** GitHub Actions ISO build
 
