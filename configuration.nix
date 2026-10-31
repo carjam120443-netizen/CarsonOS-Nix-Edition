@@ -20,6 +20,25 @@
     usbutils
   ];
 
+  # Install a system-wide Fastfetch config so every user gets the CarsonOS
+  # banner by default, while still allowing personal configs to override it.
+  environment.etc."xdg/fastfetch/config.jsonc".text = builtins.toJSON {
+    logo = {
+      type = "raw";
+      source = ''
+        ('-.     _  .-')    .-')                     .-') _                .-')                 .-') _       ) (`-.
+                    ( OO ).-.( \( -O )  ( OO ).                  ( OO ) )              ( OO ).              ( OO ) )       ( OO ).
+           .-----.  / . --. / ,------. (_)---\_) .-'),-----. ,--./ ,--,'  .-'),-----. (_)---\_)         ,--./ ,--,' ,-.-')(_/.  \_)-.
+          '  .--./  | \-.  \  |   /\`. '/    _ | ( OO'  .-.  '|   \ |  |\ ( OO'  .-.  '/    _ |    .-')  |   \ |  |\ |  |OO)\  `.'  /
+          |  |('-..-'-'  |  | |  /  | |\  :` `. /   |  | |  ||    \|  | )/   |  | |  |\  :` `.  _(  OO) |    \|  | )|  |  \ \     /\
+         /_) |OO  )\| |_.'  | |  |_.' | '..`''.)\_) |  |\|  ||  .     |/ \_) |  |\|  | '..`''.)(,------.|  .     |/ |  |(_/  \   \ |
+         ||  |`-'|  |  .-.  | |  .  '.'.-._)   \  \ |  | |  ||  |\    |    \ |  | |  |.-._)   \ '------'|  |\    | ,|  |_.' .'    \_)
+        (_'  '--'\  |  | |  | |  |\  \ \       /   `'  '-'  '|  | \   |     `'  '-'  '\       /         |  | \   |(_|  |   /  .'.  \
+           `-----'  `--' `--' `--' '--' `-----'      `-----' `--'  `--'       `-----'  `-----'          `--'  `--'  `--'  '--'   '--'
+      '';
+    };
+  };
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
