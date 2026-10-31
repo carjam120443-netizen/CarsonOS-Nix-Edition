@@ -24,6 +24,9 @@
 
   networking.networkmanager.enable = true;
 
+  # Enable zsh so the Deer file-navigation function can be used.
+  programs.zsh.enable = true;
+
   # Provide Debian/Ubuntu userspace through containers rather than running
   # apt/dpkg against the NixOS host filesystem.
   virtualisation.podman.enable = true;
@@ -41,6 +44,8 @@
     gnugrep
     distrobox
     podman
+    deer
+    cmatrix
   ];
 
   # Install a system-wide Fastfetch config so every user gets the CarsonOS
