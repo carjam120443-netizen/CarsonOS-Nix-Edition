@@ -16,9 +16,11 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Display manager:** SDDM
 - **Init/system manager:** systemd (NixOS default)
 - **Networking:** NetworkManager
+- **Debian/Ubuntu compatibility:** Distrobox + Podman containers (APT runs inside containers, not on the NixOS host)
 - **Audio:** PipeWire
 - **Package management:** Lix (Nix-compatible implementation)
 - **Text editor:** Textadept
+- **GNU utilities:** GNU grep
 - **Build definition:** Nix flake
 - **CI:** GitHub Actions ISO build
 
@@ -61,6 +63,21 @@ You need Nix with flakes enabled on an x86_64 Linux machine.
 The ISO will be in `result/iso/`. Test it in a virtual machine before trying it on physical hardware.
 
 The live ISO uses the official NixOS graphical Calamares installer module. It provides a graphical installation flow, including disk and partition selection. The current integration is the standard NixOS Calamares workflow; it has not yet been customized to automatically deploy this repository's exact CarsonOS flake configuration. Review the generated installation configuration before installing, and test in a VM first.
+
+## GNU grep and Debian/Ubuntu compatibility
+
+GNU grep is included as the `gnugrep` package.
+
+CarsonOS also includes Distrobox and Podman for users who need a Debian or Ubuntu environment. APT and dpkg should run **inside** that container, not against the CarsonOS host. For example, after booting CarsonOS:
+
+```bash
+distrobox create --name debian --image debian:stable
+distrobox enter debian
+sudo apt update
+sudo apt install <package-name>
+```
+
+You can use an Ubuntu image instead by replacing `debian:stable` with an Ubuntu image such as `ubuntu:24.04`. The container keeps Debian/Ubuntu package management separate from the NixOS host, whose system packages remain managed declaratively with Nix/Lix. The host does not use Debian or Ubuntu `sources.list` files.
 
 ## Lix
 
