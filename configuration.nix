@@ -11,6 +11,17 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  # Optional i3 tiling window manager. Plasma remains available in SDDM;
+  # choose the i3 session from the login screen when desired.
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu
+      i3status
+      i3lock
+    ];
+  };
+
   networking.networkmanager.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -22,6 +33,7 @@
     curl
     pciutils
     usbutils
+    textadept
   ];
 
   # Install a system-wide Fastfetch config so every user gets the CarsonOS
