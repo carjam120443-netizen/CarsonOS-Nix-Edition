@@ -24,6 +24,10 @@
 
   networking.networkmanager.enable = true;
 
+  # Provide Debian/Ubuntu userspace through containers rather than running
+  # apt/dpkg against the NixOS host filesystem.
+  virtualisation.podman.enable = true;
+
   environment.systemPackages = with pkgs; [
     firefox
     git
@@ -34,6 +38,9 @@
     pciutils
     usbutils
     textadept
+    gnugrep
+    distrobox
+    podman
   ];
 
   # Install a system-wide Fastfetch config so every user gets the CarsonOS
