@@ -20,7 +20,7 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Audio:** PipeWire
 - **Package management:** Lix (Nix-compatible implementation)
 - **Text editor:** Textadept
-- **Version control:** Git Full (with `git` and `gitMinimal` available as alternatives)
+- **Version control:** Git
 - **GNU utilities:** GNU grep
 - **Shell tools:** Zsh with Deer file navigation, plus CMatrix terminal animation
 - **Build definition:** Nix flake
@@ -83,7 +83,7 @@ You can use an Ubuntu image instead by replacing `debian:stable` with an Ubuntu 
 
 ## Git package variants
 
-CarsonOS selects `gitFull` by default through the NixOS `programs.git.package` option. The three Nixpkgs variants are alternatives, not three separate Git commands to install side-by-side:
+CarsonOS selects the feature-complete `gitFull` package by default through the NixOS `programs.git.package` option. Regardless of the selected package variant, the command users run is simply `git`. The three Nixpkgs variants are alternatives, not separate commands to install side-by-side:
 
 - `pkgs.git`: standard Git package.
 - `pkgs.gitFull`: feature-complete build with optional integrations and GUI tools such as `gitk` and `git gui`.
