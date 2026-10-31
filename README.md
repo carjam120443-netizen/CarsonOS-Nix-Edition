@@ -11,6 +11,7 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Base:** NixOS (nixpkgs unstable)
 - **Architecture:** x86_64
 - **Desktop:** KDE Plasma 6
+- **Installer:** Calamares graphical installer (NixOS installer integration)
 - **Display manager:** SDDM
 - **Init/system manager:** systemd (NixOS default)
 - **Networking:** NetworkManager
@@ -56,6 +57,8 @@ You need Nix with flakes enabled on an x86_64 Linux machine.
    ```
 
 The ISO will be in `result/iso/`. Test it in a virtual machine before trying it on physical hardware.
+
+The live ISO uses the official NixOS graphical Calamares installer module. It provides a graphical installation flow, including disk and partition selection. The current integration is the standard NixOS Calamares workflow; it has not yet been customized to automatically deploy this repository's exact CarsonOS flake configuration. Review the generated installation configuration before installing, and test in a VM first.
 
 ## Lix
 
