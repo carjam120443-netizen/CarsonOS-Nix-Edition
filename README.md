@@ -15,7 +15,7 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Init/system manager:** systemd (NixOS default)
 - **Networking:** NetworkManager
 - **Audio:** PipeWire
-- **Package management:** Nix
+- **Package management:** Lix (Nix-compatible implementation)
 - **Build definition:** Nix flake
 - **CI:** GitHub Actions ISO build
 
@@ -56,6 +56,18 @@ You need Nix with flakes enabled on an x86_64 Linux machine.
    ```
 
 The ISO will be in `result/iso/`. Test it in a virtual machine before trying it on physical hardware.
+
+## Lix
+
+CarsonOS uses the stable Lix package from nixpkgs as its Nix implementation. Lix is compatible with the Nix ecosystem, so existing Nix commands and flakes remain the normal way to manage the system.
+
+After booting, verify the implementation with:
+
+```bash
+nix --version
+```
+
+The output should identify itself as **Lix**.
 
 ## GitHub Actions
 
