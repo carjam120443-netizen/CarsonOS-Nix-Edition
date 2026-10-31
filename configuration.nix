@@ -3,6 +3,10 @@
 {
   networking.hostName = "carsonos";
 
+  # Use the stable Lix implementation instead of upstream CppNix.
+  nix.package = pkgs.lixPackageSets.stable.lix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
