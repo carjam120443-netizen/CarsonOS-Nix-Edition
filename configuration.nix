@@ -21,21 +21,12 @@
   ];
 
   # Install a system-wide Fastfetch config so every user gets the CarsonOS
-  # banner by default, while still allowing personal configs to override it.
+  # banner by default. Keep the ASCII art in a separate file: Nix indented
+  # strings use two apostrophes as a terminator, which the art itself contains.
   environment.etc."xdg/fastfetch/config.jsonc".text = builtins.toJSON {
     logo = {
       type = "raw";
-      source = ''
-        ('-.     _  .-')    .-')                     .-') _                .-')                 .-') _       ) (`-.
-                    ( OO ).-.( \( -O )  ( OO ).                  ( OO ) )              ( OO ).              ( OO ) )       ( OO ).
-           .-----.  / . --. / ,------. (_)---\_) .-'),-----. ,--./ ,--,'  .-'),-----. (_)---\_)         ,--./ ,--,' ,-.-')(_/.  \_)-.
-          '  .--./  | \-.  \  |   /\`. '/    _ | ( OO'  .-.  '|   \ |  |\ ( OO'  .-.  '/    _ |    .-')  |   \ |  |\ |  |OO)\  `.'  /
-          |  |('-..-'-'  |  | |  /  | |\  :` `. /   |  | |  ||    \|  | )/   |  | |  |\  :` `.  _(  OO) |    \|  | )|  |  \ \     /\
-         /_) |OO  )\| |_.'  | |  |_.' | '..`''.)\_) |  |\|  ||  .     |/ \_) |  |\|  | '..`''.)(,------.|  .     |/ |  |(_/  \   \ |
-         ||  |`-'|  |  .-.  | |  .  '.'.-._)   \  \ |  | |  ||  |\    |    \ |  | |  |.-._)   \ '------'|  |\    | ,|  |_.' .'    \_)
-        (_'  '--'\  |  | |  | |  |\  \ \       /   `'  '-'  '|  | \   |     `'  '-'  '\       /         |  | \   |(_|  |   /  .'.  \
-           `-----'  `--' `--' `--' '--' `-----'      `-----' `--'  `--'       `-----'  `-----'          `--'  `--'  `--'  '--'   '--'
-      '';
+      source = builtins.readFile ./assets/carsonos-ascii.txt;
     };
   };
 
