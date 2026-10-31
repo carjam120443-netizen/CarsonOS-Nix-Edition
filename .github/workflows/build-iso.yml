@@ -1,0 +1,37 @@
+name: Build CarsonOS Nix Edition ISO
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "flake.nix"
+      - "flake.lock"
+      - "configuration.nix"
+      - ".github/workflows/build-iso.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build ISO
+        run: nix build .#nixosConfigurations.carsonos-iso.config.system.build.isoImage --print-build-logs
+
+      - name: Upload ISO artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: carsonos-nix-edition-iso
+          path: result/iso/*.iso
+          if-no-files-found: error
+          retention-days: 14
