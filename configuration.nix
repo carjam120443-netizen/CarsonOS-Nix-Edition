@@ -24,6 +24,13 @@
 
   networking.networkmanager.enable = true;
 
+  # Use the feature-complete Git variant by default.
+  # Switch to pkgs.git or pkgs.gitMinimal here if a smaller install is preferred.
+  programs.git = {
+    enable = true;
+    package = pkgs.gitFull;
+  };
+
   # Enable zsh so the Deer file-navigation function can be used.
   programs.zsh.enable = true;
 
@@ -33,7 +40,6 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    git
     fastfetch
     vim
     wget
