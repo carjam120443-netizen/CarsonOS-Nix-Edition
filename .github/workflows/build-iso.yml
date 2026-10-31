@@ -9,6 +9,7 @@ on:
       - "flake.lock"
       - "configuration.nix"
       - "assets/**"
+      - "assets/**"
       - ".github/workflows/build-iso.yml"
 
 permissions:
