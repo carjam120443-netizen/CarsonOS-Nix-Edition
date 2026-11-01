@@ -94,8 +94,18 @@ CarsonOS includes several alternative system-information tools alongside Fastfet
 - [fetch](https://search.nixos.org/packages?channel=unstable&query=fetch#show=fetch) — the `fetch` package from the unstable Nixpkgs channel.
 - [ramfetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=ramfetch) — displays RAM and memory information.
 - [honeyfetch](https://search.nixos.org/packages?channel=26.05&from=50&query=fetch#show=honeyfetch) — a classic Neofetch-style system information display.
+- [countryfetch](https://search.nixos.org/packages?channel=unstable&query=fetch#show=countryfetch) — a country-themed system-information display.
+- [gpufetch](https://search.nixos.org/packages?channel=unstable&query=fetch#show=gpufetch) — displays GPU information.
+- [zigfetch](https://search.nixos.org/packages?channel=unstable&query=fetch#show=zigfetch) — another lightweight system-information fetch tool.
 
 These are installed as alternatives; run the command matching the tool you want to use.
+
+## Privilege escalation and font tools
+
+- [doas](https://search.nixos.org/packages?channel=unstable&query=doas#show=doas) — a lightweight alternative to `sudo`. The package is installed, but CarsonOS does not switch its privilege-escalation configuration to doas automatically; `sudo` remains the configured default unless you explicitly configure doas.
+- [fontconfig](https://search.nixos.org/packages?channel=unstable&query=font#show=fontconfig) — font configuration and discovery library used by applications to locate and match fonts.
+- [font-manager](https://search.nixos.org/packages?channel=unstable&query=font#show=font-manager) — graphical font management application.
+- [font-adobe-75dpi](https://search.nixos.org/packages?channel=unstable&query=font#show=font-adobe-75dpi) — legacy Adobe 75-DPI X11 bitmap fonts.
 
 ## Git package variants
 
