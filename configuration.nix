@@ -50,6 +50,9 @@
     cpufetch
     ufetch
     nerdfetch
+    pridefetch
+    ramfetch
+    honeyfetch
     vim
     wget
     curl
