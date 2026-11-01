@@ -89,6 +89,9 @@ CarsonOS includes several alternative system-information tools alongside Fastfet
 - [cpufetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=cpufetch) — displays CPU architecture information.
 - [ufetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=ufetch) — tiny system information display.
 - [nerdfetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=nerdfetch) — POSIX system-information fetch script that uses Nerd Fonts.
+- [pridefetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=pridefetch) — a colorful pride-themed fetch display.
+- [ramfetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=ramfetch) — displays RAM and memory information.
+- [honeyfetch](https://search.nixos.org/packages?channel=26.05&from=50&query=fetch#show=honeyfetch) — a classic Neofetch-style system information display.
 
 These are installed as alternatives; run the command matching the tool you want to use.
 
