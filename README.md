@@ -81,6 +81,17 @@ sudo apt install <package-name>
 
 You can use an Ubuntu image instead by replacing `debian:stable` with an Ubuntu image such as `ubuntu:24.04`. The container keeps Debian/Ubuntu package management separate from the NixOS host, whose system packages remain managed declaratively with Nix/Lix. The host does not use Debian or Ubuntu `sources.list` files.
 
+## System information fetch tools
+
+CarsonOS includes several alternative system-information tools alongside Fastfetch:
+
+- [fetchutils](https://search.nixos.org/packages?channel=26.05&query=fetch#show=fetchutils) — collection of small shell utilities for fetching system information.
+- [cpufetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=cpufetch) — displays CPU architecture information.
+- [ufetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=ufetch) — tiny system information display.
+- [nerdfetch](https://search.nixos.org/packages?channel=26.05&query=fetch#show=nerdfetch) — POSIX system-information fetch script that uses Nerd Fonts.
+
+These are installed as alternatives; run the command matching the tool you want to use.
+
 ## Git package variants
 
 CarsonOS selects the feature-complete `gitFull` package by default through the NixOS `programs.git.package` option. Regardless of the selected package variant, the command users run is simply `git`. The three Nixpkgs variants are alternatives, not separate commands to install side-by-side:
