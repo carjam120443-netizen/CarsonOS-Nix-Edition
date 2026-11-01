@@ -3,6 +3,11 @@
 {
   networking.hostName = "carsonos";
 
+  # pridecat is marked unfree by nixpkgs (CC-BY-NC-SA-4.0).
+  # Allow only this package rather than enabling every unfree package.
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [ "pridecat" ];
+
   # Use the stable Lix implementation instead of upstream CppNix.
   nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
