@@ -55,6 +55,13 @@
     fetch
     ramfetch
     honeyfetch
+    countryfetch
+    gpufetch
+    zigfetch
+    doas
+    fontconfig
+    font-manager
+    font-adobe-75dpi
     vim
     wget
     curl
