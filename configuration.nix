@@ -46,6 +46,10 @@
   environment.systemPackages = with pkgs; [
     firefox
     fastfetch
+    fetchutils
+    cpufetch
+    ufetch
+    nerdfetch
     vim
     wget
     curl
