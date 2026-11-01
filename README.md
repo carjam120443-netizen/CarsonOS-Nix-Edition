@@ -18,7 +18,7 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Networking:** NetworkManager
 - **Debian/Ubuntu compatibility:** Distrobox + Podman containers (APT runs inside containers, not on the NixOS host)
 - **Audio:** PipeWire
-- **Package management:** Lix (Nix-compatible implementation)
+- **Package management:** Lix (Nix-compatible implementation), with `pkg` as an alias for `nix`
 - **Text editor:** Textadept
 - **Version control:** Git
 - **GNU utilities:** GNU grep
@@ -112,6 +112,8 @@ nix --version
 ```
 
 The output should identify itself as **Lix**.
+
+CarsonOS also provides `pkg` as a shell alias for `nix`, so commands such as `pkg profile list` work as a shortcut. The original `nix` command remains available; both names use the same Lix-backed Nix interface.
 
 ## GitHub Actions
 
