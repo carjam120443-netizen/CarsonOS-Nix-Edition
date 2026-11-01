@@ -3,6 +3,13 @@
 {
   networking.hostName = "carsonos";
 
+  # Build hybrid installation media for both legacy BIOS and UEFI systems.
+  # The NixOS installation-CD module already enables these by default on x86,
+  # but keeping them explicit makes CarsonOS's boot targets intentional.
+  isoImage.makeBiosBootable = true;
+  isoImage.makeEfiBootable = true;
+  isoImage.makeUsbBootable = true;
+
   # pridecat is marked unfree by nixpkgs (CC-BY-NC-SA-4.0).
   # Allow only this package rather than enabling every unfree package.
   nixpkgs.config.allowUnfreePredicate = pkg:
