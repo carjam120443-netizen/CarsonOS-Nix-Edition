@@ -109,6 +109,13 @@ These are installed as alternatives; run the command matching the tool you want 
 - [font-manager](https://search.nixos.org/packages?channel=unstable&query=font#show=font-manager) — graphical font management application.
 - [font-adobe-75dpi](https://search.nixos.org/packages?channel=unstable&query=font#show=font-adobe-75dpi) — legacy Adobe 75-DPI X11 bitmap fonts.
 
+## Windows application compatibility
+
+- [wine](https://search.nixos.org/packages?channel=unstable&query=wine#show=wine) — compatibility layer for running many Windows applications on Linux.
+- [wine64](https://search.nixos.org/packages?channel=unstable&query=wine#show=wine64) — 64-bit-only Wine package.
+
+On x86_64 Linux, the standard `wine` package supports both 32-bit and 64-bit applications by default; `wine64` is the 64-bit-only alternative. These packages do not guarantee that every Windows application or game will work. See the [NixOS Wine documentation](https://wiki.nixos.org/wiki/Wine) for the available build variants.
+
 ## Git package variants
 
 CarsonOS selects the feature-complete `gitFull` package by default through the NixOS `programs.git.package` option. Regardless of the selected package variant, the command users run is simply `git`. The three Nixpkgs variants are alternatives, not separate commands to install side-by-side:
