@@ -26,6 +26,10 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 - **Build definition:** Nix flake
 - **CI:** GitHub Actions ISO build
 
+## NixOS configuration reference
+
+- [NixOS unstable boot options](https://search.nixos.org/options?channel=unstable&query=boot&sort=alpha_asc&type=options) — browse boot-related NixOS configuration options, including bootloader, kernel, and initrd settings.
+
 ## Repository layout
 
 ```text
