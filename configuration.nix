@@ -51,6 +51,8 @@
     ufetch
     nerdfetch
     pridefetch
+    pridecat
+    fetch
     ramfetch
     honeyfetch
     vim
