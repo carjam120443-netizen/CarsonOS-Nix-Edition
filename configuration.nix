@@ -67,6 +67,8 @@
     fontconfig
     font-manager
     font-adobe-75dpi
+    wine
+    wine64
     vim
     wget
     curl
