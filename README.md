@@ -30,6 +30,24 @@ CarsonOS Nix Edition starts with a reproducible NixOS live ISO and a declarative
 
 - [NixOS unstable boot options](https://search.nixos.org/options?channel=unstable&query=boot&sort=alpha_asc&type=options) — browse boot-related NixOS configuration options, including bootloader, kernel, and initrd settings.
 
+## ISO boot compatibility
+
+CarsonOS builds hybrid installation media with support explicitly enabled for:
+
+- **Legacy BIOS** booting via the ISO's BIOS boot path.
+- **UEFI** booting via the ISO's EFI boot image.
+- **USB media** as well as optical-media-compatible ISO layout.
+
+These are controlled in `configuration.nix` by:
+
+```nix
+isoImage.makeBiosBootable = true;
+isoImage.makeEfiBootable = true;
+isoImage.makeUsbBootable = true;
+```
+
+The options configure how the **live installer ISO** boots. They do not choose the bootloader that Calamares installs onto a target disk. The current Calamares integration still generates its own installation configuration; the target system's bootloader setup must be checked separately after installation. UEFI boot may also require Secure Boot to be disabled because the standard installer EFI loader is not signed for Secure Boot. See the [NixOS installation media notes](https://wiki.nixos.org/wiki/How_to_install_NixOS_from_Linux).
+
 ## Repository layout
 
 ```text
