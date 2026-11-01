@@ -100,6 +100,8 @@ CarsonOS includes several alternative system-information tools alongside Fastfet
 
 These are installed as alternatives; run the command matching the tool you want to use.
 
+**License note:** `pridecat` is marked unfree by nixpkgs because it uses the CC-BY-NC-SA-4.0 license. The NixOS configuration explicitly permits only `pridecat` rather than enabling all unfree packages. Check the license terms before redistributing CarsonOS images containing it, especially for commercial use.
+
 ## Privilege escalation and font tools
 
 - [doas](https://search.nixos.org/packages?channel=unstable&query=doas#show=doas) — a lightweight alternative to `sudo`. The package is installed, but CarsonOS does not switch its privilege-escalation configuration to doas automatically; `sudo` remains the configured default unless you explicitly configure doas.
