@@ -7,6 +7,11 @@
   nix.package = pkgs.lixPackageSets.stable.lix;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Provide `pkg` as a convenient alias while keeping the original `nix` command.
+  environment.shellAliases = {
+    pkg = "nix";
+  };
+
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
